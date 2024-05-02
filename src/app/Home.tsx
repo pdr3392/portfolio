@@ -22,7 +22,7 @@ export default function Home(): React.ReactElement {
           <div className='h-full w-full bg-black rounded-full z-10' />
 
           <div className='w-full h-full absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2'>
-            <div className='inset-0 bg-glow rounded-lg blur shadow-inner-glow z-0' />{' '}
+            <div className='inset-0 bg-glow rounded-lg blur shadow-inner-glow z-0' />
           </div>
         </div>
         <div className='h-full w-1/4 flex flex-col justify-center items-start bg-red-400' />
