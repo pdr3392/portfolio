@@ -1,3 +1,5 @@
+/* eslint-disable global-require */
+/* eslint-disable import/no-extraneous-dependencies */
 import type { Config } from 'tailwindcss';
 
 const config: Config = {
@@ -5,6 +7,9 @@ const config: Config = {
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
+    './node_modules/flowbite/**/*.js',
+    './src/app/**/*.{ts,tsx}',
+    './public/**/*.html',
   ],
   theme: {
     fontFamily: {
@@ -26,6 +31,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [require('flowbite/plugin')],
 };
 export default config;

@@ -11,7 +11,7 @@ import { RiDownloadLine } from 'react-icons/ri';
 
 export default function CVSection(): React.ReactNode {
   return (
-    <div className='h-full w-1/4 flex flex-col justify-center items-center gap-4'>
+    <div className='h-full w-1/4 flex flex-col justify-center items-center gap-4 z-50'>
       <a href='/cv.pdf' download='cv'>
         <div className='hover:before:scale-x-100 hover:before:origin-left relative before:w-full before:h-1 before:origin-right before:transition-transform before:duration-300 before:scale-x-0 before:bg-herolayer before:absolute before:left-0 before:bottom-0 cursor-pointer flex flex-row gap-2 items-center pb-2'>
           <p className='text-herolayer font-Raleway text-base'>Download CV</p>

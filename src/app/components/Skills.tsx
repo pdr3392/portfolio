@@ -17,6 +17,7 @@ import {
   SiGithub,
   SiGooglecloud,
   SiJenkins,
+  SiJest,
   SiLinux,
   SiMongodb,
   SiMysql,
@@ -30,11 +31,13 @@ import {
   SiReact,
   SiRedis,
   SiRedux,
+  SiSelenium,
   SiSpringboot,
   SiTailwindcss,
   SiTypescript,
 } from 'react-icons/si';
 import { VscAzure } from 'react-icons/vsc';
+import Tooltip from './Tooltip';
 
 export default function Skills(): React.ReactNode {
   return (
@@ -43,49 +46,159 @@ export default function Skills(): React.ReactNode {
         <p className='font-Raleway text-white text-[48px]'>Tools & Skills</p>
 
         <p className='font-Raleway text-white opacity-80 text-2xl mt-[60px]'>
-          Tools I'm using everyday
+          Tools I'm using on a daily basis
         </p>
 
-        <div className='flex flex-row w-full h-fit items-center justify-center gap-4'>
-          <SiTypescript className='text-[62px] text-herolayer' />
-          <SiDocker className='text-[62px] text-herolayer' />
-          <SiNodedotjs className='text-[62px] text-herolayer' />
-          <SiReact className='text-[62px] text-herolayer' />
-          <SiNextdotjs className='text-[62px] text-herolayer' />
-          <SiFigma className='text-[62px] text-herolayer' />
-          <SiExpress className='text-[62px] text-herolayer' />
-          <SiChakraui className='text-[62px] text-herolayer' />
-          <SiPostgresql className='text-[62px] text-herolayer' />
-          <SiPrisma className='text-[62px] text-herolayer' />
-          <SiPython className='text-[62px] text-herolayer' />
-          <VscAzure className='text-[62px] text-herolayer' />
-          <SiGit className='text-[62px] text-herolayer' />
-          <SiGithub className='text-[62px] text-herolayer' />
-          <SiRabbitmq className='text-[62px] text-herolayer' />
-          <SiApachekafka className='text-[62px] text-herolayer' />
-          <SiRedis className='text-[62px] text-herolayer' />
-          <SiLinux className='text-[62px] text-herolayer' />
+        <div className='flex flex-row w-full h-fit items-center justify-center gap-4 flex-wrap'>
+          <Tooltip
+            el={<SiTypescript className='text-[62px] text-herolayer' />}
+            label='Typescript'
+          />
+          <Tooltip
+            el={<SiDocker className='text-[62px] text-herolayer' />}
+            label='Docker'
+          />
+          <Tooltip
+            el={<SiNodedotjs className='text-[62px] text-herolayer' />}
+            label='Node.js'
+          />
+          <Tooltip
+            el={<SiReact className='text-[62px] text-herolayer' />}
+            label='React.js'
+          />
+          <Tooltip
+            el={<SiFigma className='text-[62px] text-herolayer' />}
+            label='Figma'
+          />
+          <Tooltip
+            el={<SiExpress className='text-[62px] text-herolayer' />}
+            label='Express'
+          />
+          <Tooltip
+            el={<SiChakraui className='text-[62px] text-herolayer' />}
+            label='Chakra UI'
+          />
+          <Tooltip
+            el={<SiPostgresql className='text-[62px] text-herolayer' />}
+            label='PostgreSQL'
+          />
+          <Tooltip
+            el={<SiPrisma className='text-[62px] text-herolayer' />}
+            label='Prisma ORM'
+          />
+          <Tooltip
+            el={<SiPython className='text-[62px] text-herolayer' />}
+            label='Python'
+          />
+          <Tooltip
+            el={<VscAzure className='text-[62px] text-herolayer' />}
+            label='Microsoft Azure'
+          />
+          <Tooltip
+            el={<SiGit className='text-[62px] text-herolayer' />}
+            label='Git'
+          />
+          <Tooltip
+            el={<SiGithub className='text-[62px] text-herolayer' />}
+            label='Github'
+          />
+          <Tooltip
+            el={<SiRabbitmq className='text-[62px] text-herolayer' />}
+            label='RabbitMQ'
+          />
+          <Tooltip
+            el={<SiApachekafka className='text-[62px] text-herolayer' />}
+            label='Apache Kafka'
+          />
+          <Tooltip
+            el={<SiRedis className='text-[62px] text-herolayer' />}
+            label='Redis'
+          />
+          <Tooltip
+            el={<SiLinux className='text-[62px] text-herolayer' />}
+            label='Linux'
+          />
+          <Tooltip
+            el={<SiJest className='text-[62px] text-herolayer' />}
+            label='Jest'
+          />
         </div>
         <p className='font-Raleway text-white opacity-80 text-2xl mt-[60px]'>
           Tools I'm experienced with
         </p>
-        <div className='flex flex-row w-full h-fit items-center justify-center gap-4'>
-          <SiMysql className='text-[62px] text-herolayer' />
-          <BiLogoAws className='text-[62px] text-herolayer' />
-          <SiTailwindcss className='text-[62px] text-herolayer' />
-          <SiSpringboot className='text-[62px] text-herolayer' />
-          <AiOutlineJava className='text-[62px] text-herolayer' />
-          <BiLogoGoLang className='text-[62px] text-herolayer' />
-          <SiGin className='text-[62px] text-herolayer' />
-          <SiDjango className='text-[62px] text-herolayer' />
-          <SiFlask className='text-[62px] text-herolayer' />
-          <SiFastapi className='text-[62px] text-herolayer' />
-          <SiGooglecloud className='text-[62px] text-herolayer' />
-          <SiMongodb className='text-[62px] text-herolayer' />
-          <SiFauna className='text-[62px] text-herolayer' />
-          <SiJenkins className='text-[62px] text-herolayer' />
-          <SiNginx className='text-[62px] text-herolayer' />
-          <SiRedux className='text-[62px] text-herolayer' />
+        <div className='flex flex-row w-full h-fit items-center justify-center gap-4 flex-wrap'>
+          <Tooltip
+            el={<SiMysql className='text-[62px] text-herolayer' />}
+            label='MySQÇ'
+          />
+          <Tooltip
+            el={<SiNextdotjs className='text-[62px] text-herolayer' />}
+            label='Next.js'
+          />
+          <Tooltip
+            el={<BiLogoAws className='text-[62px] text-herolayer' />}
+            label='AWS'
+          />
+          <Tooltip
+            el={<SiTailwindcss className='text-[62px] text-herolayer' />}
+            label='Tailwind CSS'
+          />
+          <Tooltip
+            el={<SiSpringboot className='text-[62px] text-herolayer' />}
+            label='Spring Boot Framework'
+          />
+          <Tooltip
+            el={<AiOutlineJava className='text-[62px] text-herolayer' />}
+            label='Java'
+          />
+          <Tooltip
+            el={<BiLogoGoLang className='text-[62px] text-herolayer' />}
+            label='Golang'
+          />
+          <Tooltip
+            el={<SiGin className='text-[62px] text-herolayer' />}
+            label='Gin Gonic'
+          />
+          <Tooltip
+            el={<SiDjango className='text-[62px] text-herolayer' />}
+            label='Django'
+          />
+          <Tooltip
+            el={<SiFlask className='text-[62px] text-herolayer' />}
+            label='Flask'
+          />
+          <Tooltip
+            el={<SiFastapi className='text-[62px] text-herolayer' />}
+            label='Fast API'
+          />
+          <Tooltip
+            el={<SiGooglecloud className='text-[62px] text-herolayer' />}
+            label='GCP'
+          />
+          <Tooltip
+            el={<SiMongodb className='text-[62px] text-herolayer' />}
+            label='Mongo DB'
+          />
+          <Tooltip
+            el={<SiFauna className='text-[62px] text-herolayer' />}
+            label='Fauna DB'
+          />
+          <Tooltip
+            el={<SiJenkins className='text-[62px] text-herolayer' />}
+            label='Jenkins'
+          />
+          <Tooltip
+            el={<SiNginx className='text-[62px] text-herolayer' />}
+            label='Nginx'
+          />
+          <Tooltip
+            el={<SiRedux className='text-[62px] text-herolayer' />}
+            label='Redux'
+          />
+          <Tooltip
+            el={<SiSelenium className='text-[62px] text-herolayer' />}
+            label='Selenium'
+          />
         </div>
       </div>
 

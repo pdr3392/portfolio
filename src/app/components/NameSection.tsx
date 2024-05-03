@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function NameSection(): React.ReactNode {
   return (
-    <div className='h-full w-1/4 flex flex-col justify-center items-start'>
+    <div className='h-full w-1/4 flex flex-col justify-center items-start z-50'>
       <h1 className='font-Raleway font-extrabold text-white text-5xl max-w-2'>
         Pedro Correia
       </h1>

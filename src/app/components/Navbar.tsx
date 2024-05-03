@@ -43,7 +43,7 @@ export default function Navbar(): React.ReactNode {
   ];
 
   return (
-    <div className='w-fit absolute top-9 right-40 rounded-2xl bg-navbar h-16 flex flex-row items-center px-10 gap-4 justify-end'>
+    <div className='w-fit absolute top-9 right-40 rounded-2xl bg-navbar h-16 flex flex-row items-center px-10 gap-4 justify-end z-50'>
       {navItems.map((item) => (
         <p
           className='font-Raleway text-white opacity-80 hover:text-parsed hover:opacity-100 cursor-pointer'
