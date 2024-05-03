@@ -17,6 +17,7 @@ const config: Config = {
         herolayer: '#7B4AE2',
         navbar: '#0f1120',
         parsed: '#643eb9',
+        divider: '#201a3f',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

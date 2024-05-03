@@ -1,3 +1,7 @@
+'use client';
+
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React from 'react';
 
 export default function Navbar(): React.ReactNode {
@@ -16,7 +20,13 @@ export default function Navbar(): React.ReactNode {
     },
     {
       name: 'Skills',
-      action: () => {},
+      action: () => {
+        const section = document.querySelector('#skills');
+
+        if (!section) return;
+
+        section.scrollIntoView({ behavior: 'smooth' });
+      },
     },
     {
       name: 'Career',
@@ -38,6 +48,7 @@ export default function Navbar(): React.ReactNode {
         <p
           className='font-Raleway text-white opacity-80 hover:text-parsed hover:opacity-100 cursor-pointer'
           key={item.name}
+          onClick={item.action}
         >
           {item.name}
         </p>
