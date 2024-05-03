@@ -6,10 +6,13 @@ import Navbar from './components/Navbar';
 
 export default function Home(): React.ReactElement {
   return (
-    <div className='flex h-lvh w-lvw bg-bg'>
+    <div className='flex h-lvh w-lvw bg-bg relative'>
       <div className='flex flex-row h-full w-full px-36'>
         <NameSection />
         <Hero />
+        {/* filler */}
+        <div className='flex w-1/2 h-full' />
+        {/* filler */}
         <CVSection />
         <Navbar />
       </div>
