@@ -11,17 +11,19 @@ export default function Navbar(): React.ReactNode {
       action: () => {},
     },
     {
-      name: 'About me',
-      action: () => {},
-    },
-    {
-      name: 'Projects',
-      action: () => {},
-    },
-    {
       name: 'Skills',
       action: () => {
         const section = document.querySelector('#skills');
+
+        if (!section) return;
+
+        section.scrollIntoView({ behavior: 'smooth' });
+      },
+    },
+    {
+      name: 'Projects',
+      action: () => {
+        const section = document.querySelector('#projects');
 
         if (!section) return;
 
@@ -36,6 +38,17 @@ export default function Navbar(): React.ReactNode {
       name: 'Contact',
       action: () => {},
     },
+    {
+      name: 'About me',
+      action: () => {
+        const section = document.querySelector('#about-me');
+
+        if (!section) return;
+
+        section.scrollIntoView({ behavior: 'smooth' });
+      },
+    },
+
     {
       name: 'Rant',
       action: () => {},

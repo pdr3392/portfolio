@@ -39,7 +39,195 @@ import {
 import { VscAzure } from 'react-icons/vsc';
 import Tooltip from './Tooltip';
 
+type Skill = { icon: React.ReactElement; label: string; tooltipId: string };
+
 export default function Skills(): React.ReactNode {
+  const daily: Skill[] = [
+    {
+      icon: <SiTypescript className='text-[62px] text-herolayer' />,
+      label: 'Typescript',
+      tooltipId: 'typescript',
+    },
+    {
+      icon: <SiDocker className='text-[62px] text-herolayer' />,
+      label: 'Docker',
+      tooltipId: 'docker',
+    },
+    {
+      icon: <SiNodedotjs className='text-[62px] text-herolayer' />,
+      label: 'Node.js',
+      tooltipId: 'nodejs',
+    },
+    {
+      icon: <SiReact className='text-[62px] text-herolayer' />,
+      label: 'React.js',
+      tooltipId: 'reactjs',
+    },
+    {
+      icon: <SiFigma className='text-[62px] text-herolayer' />,
+      label: 'Figma',
+      tooltipId: 'figma',
+    },
+    {
+      icon: <SiExpress className='text-[62px] text-herolayer' />,
+      label: 'Express',
+      tooltipId: 'express',
+    },
+    {
+      icon: <SiChakraui className='text-[62px] text-herolayer' />,
+      label: 'Chakra UI',
+      tooltipId: 'chakraui',
+    },
+    {
+      icon: <SiPostgresql className='text-[62px] text-herolayer' />,
+      label: 'PostgreSQL',
+      tooltipId: 'postgresql',
+    },
+    {
+      icon: <SiPrisma className='text-[62px] text-herolayer' />,
+      label: 'Prisma ORM',
+      tooltipId: 'prisma',
+    },
+    {
+      icon: <SiPython className='text-[62px] text-herolayer' />,
+      label: 'Python',
+      tooltipId: 'python',
+    },
+    {
+      icon: <VscAzure className='text-[62px] text-herolayer' />,
+      label: 'Microsoft Azure',
+      tooltipId: 'azure',
+    },
+    {
+      icon: <SiGit className='text-[62px] text-herolayer' />,
+      label: 'Git',
+      tooltipId: 'git',
+    },
+    {
+      icon: <SiGithub className='text-[62px] text-herolayer' />,
+      label: 'Github',
+      tooltipId: 'github',
+    },
+    {
+      icon: <SiRabbitmq className='text-[62px] text-herolayer' />,
+      label: 'RabbitMQ',
+      tooltipId: 'rabbitmq',
+    },
+    {
+      icon: <SiApachekafka className='text-[62px] text-herolayer' />,
+      label: 'Apache Kafka',
+      tooltipId: 'kafka',
+    },
+    {
+      icon: <SiRedis className='text-[62px] text-herolayer' />,
+      label: 'Redis',
+      tooltipId: 'redis',
+    },
+    {
+      icon: <SiLinux className='text-[62px] text-herolayer' />,
+      label: 'Linux',
+      tooltipId: 'linux',
+    },
+    {
+      icon: <SiJest className='text-[62px] text-herolayer' />,
+      label: 'Jest',
+      tooltipId: 'jest',
+    },
+  ];
+
+  const experienced: Skill[] = [
+    {
+      icon: <SiMysql className='text-[62px] text-herolayer' />,
+      label: 'MySQL',
+      tooltipId: 'mysql',
+    },
+    {
+      icon: <SiNextdotjs className='text-[62px] text-herolayer' />,
+      label: 'Next.js',
+      tooltipId: 'nextjs',
+    },
+    {
+      icon: <BiLogoAws className='text-[62px] text-herolayer' />,
+      label: 'AWS',
+      tooltipId: 'aws',
+    },
+    {
+      icon: <SiTailwindcss className='text-[62px] text-herolayer' />,
+      label: 'Tailwind CSS',
+      tooltipId: 'tailwindcss',
+    },
+    {
+      icon: <SiSpringboot className='text-[62px] text-herolayer' />,
+      label: 'Spring Boot Framework',
+      tooltipId: 'springboot',
+    },
+    {
+      icon: <AiOutlineJava className='text-[62px] text-herolayer' />,
+      label: 'Java',
+      tooltipId: 'java',
+    },
+    {
+      icon: <BiLogoGoLang className='text-[62px] text-herolayer' />,
+      label: 'Golang',
+      tooltipId: 'golang',
+    },
+    {
+      icon: <SiGin className='text-[62px] text-herolayer' />,
+      label: 'Gin Gonic',
+      tooltipId: 'gin',
+    },
+    {
+      icon: <SiDjango className='text-[62px] text-herolayer' />,
+      label: 'Django',
+      tooltipId: 'django',
+    },
+    {
+      icon: <SiFlask className='text-[62px] text-herolayer' />,
+      label: 'Flask',
+      tooltipId: 'flask',
+    },
+    {
+      icon: <SiFastapi className='text-[62px] text-herolayer' />,
+      label: 'Fast API',
+      tooltipId: 'fastapi',
+    },
+    {
+      icon: <SiGooglecloud className='text-[62px] text-herolayer' />,
+      label: 'GCP',
+      tooltipId: 'gcp',
+    },
+    {
+      icon: <SiMongodb className='text-[62px] text-herolayer' />,
+      label: 'Mongo DB',
+      tooltipId: 'mongodb',
+    },
+    {
+      icon: <SiFauna className='text-[62px] text-herolayer' />,
+      label: 'Fauna DB',
+      tooltipId: 'fauna',
+    },
+    {
+      icon: <SiJenkins className='text-[62px] text-herolayer' />,
+      label: 'Jenkins',
+      tooltipId: 'jenkins',
+    },
+    {
+      icon: <SiNginx className='text-[62px] text-herolayer' />,
+      label: 'Nginx',
+      tooltipId: 'nginx',
+    },
+    {
+      icon: <SiRedux className='text-[62px] text-herolayer' />,
+      label: 'Redux',
+      tooltipId: 'redux',
+    },
+    {
+      icon: <SiSelenium className='text-[62px] text-herolayer' />,
+      label: 'Selenium',
+      tooltipId: 'selenium',
+    },
+  ];
+
   return (
     <div className='w-full h-fit flex flex-col relative' id='skills'>
       <div className='w-full h-fit flex items-center justify-center font-extrabold mt-[140px] flex-col gap-4'>
@@ -50,155 +238,25 @@ export default function Skills(): React.ReactNode {
         </p>
 
         <div className='flex flex-row w-full h-fit items-center justify-center gap-4 flex-wrap'>
-          <Tooltip
-            el={<SiTypescript className='text-[62px] text-herolayer' />}
-            label='Typescript'
-          />
-          <Tooltip
-            el={<SiDocker className='text-[62px] text-herolayer' />}
-            label='Docker'
-          />
-          <Tooltip
-            el={<SiNodedotjs className='text-[62px] text-herolayer' />}
-            label='Node.js'
-          />
-          <Tooltip
-            el={<SiReact className='text-[62px] text-herolayer' />}
-            label='React.js'
-          />
-          <Tooltip
-            el={<SiFigma className='text-[62px] text-herolayer' />}
-            label='Figma'
-          />
-          <Tooltip
-            el={<SiExpress className='text-[62px] text-herolayer' />}
-            label='Express'
-          />
-          <Tooltip
-            el={<SiChakraui className='text-[62px] text-herolayer' />}
-            label='Chakra UI'
-          />
-          <Tooltip
-            el={<SiPostgresql className='text-[62px] text-herolayer' />}
-            label='PostgreSQL'
-          />
-          <Tooltip
-            el={<SiPrisma className='text-[62px] text-herolayer' />}
-            label='Prisma ORM'
-          />
-          <Tooltip
-            el={<SiPython className='text-[62px] text-herolayer' />}
-            label='Python'
-          />
-          <Tooltip
-            el={<VscAzure className='text-[62px] text-herolayer' />}
-            label='Microsoft Azure'
-          />
-          <Tooltip
-            el={<SiGit className='text-[62px] text-herolayer' />}
-            label='Git'
-          />
-          <Tooltip
-            el={<SiGithub className='text-[62px] text-herolayer' />}
-            label='Github'
-          />
-          <Tooltip
-            el={<SiRabbitmq className='text-[62px] text-herolayer' />}
-            label='RabbitMQ'
-          />
-          <Tooltip
-            el={<SiApachekafka className='text-[62px] text-herolayer' />}
-            label='Apache Kafka'
-          />
-          <Tooltip
-            el={<SiRedis className='text-[62px] text-herolayer' />}
-            label='Redis'
-          />
-          <Tooltip
-            el={<SiLinux className='text-[62px] text-herolayer' />}
-            label='Linux'
-          />
-          <Tooltip
-            el={<SiJest className='text-[62px] text-herolayer' />}
-            label='Jest'
-          />
+          {daily.map((skill) => (
+            <Tooltip
+              el={skill.icon}
+              label={skill.label}
+              tooltipId={skill.tooltipId}
+            />
+          ))}
         </div>
         <p className='font-Raleway text-white opacity-80 text-2xl mt-[60px]'>
           Tools I'm experienced with
         </p>
         <div className='flex flex-row w-full h-fit items-center justify-center gap-4 flex-wrap'>
-          <Tooltip
-            el={<SiMysql className='text-[62px] text-herolayer' />}
-            label='MySQÇ'
-          />
-          <Tooltip
-            el={<SiNextdotjs className='text-[62px] text-herolayer' />}
-            label='Next.js'
-          />
-          <Tooltip
-            el={<BiLogoAws className='text-[62px] text-herolayer' />}
-            label='AWS'
-          />
-          <Tooltip
-            el={<SiTailwindcss className='text-[62px] text-herolayer' />}
-            label='Tailwind CSS'
-          />
-          <Tooltip
-            el={<SiSpringboot className='text-[62px] text-herolayer' />}
-            label='Spring Boot Framework'
-          />
-          <Tooltip
-            el={<AiOutlineJava className='text-[62px] text-herolayer' />}
-            label='Java'
-          />
-          <Tooltip
-            el={<BiLogoGoLang className='text-[62px] text-herolayer' />}
-            label='Golang'
-          />
-          <Tooltip
-            el={<SiGin className='text-[62px] text-herolayer' />}
-            label='Gin Gonic'
-          />
-          <Tooltip
-            el={<SiDjango className='text-[62px] text-herolayer' />}
-            label='Django'
-          />
-          <Tooltip
-            el={<SiFlask className='text-[62px] text-herolayer' />}
-            label='Flask'
-          />
-          <Tooltip
-            el={<SiFastapi className='text-[62px] text-herolayer' />}
-            label='Fast API'
-          />
-          <Tooltip
-            el={<SiGooglecloud className='text-[62px] text-herolayer' />}
-            label='GCP'
-          />
-          <Tooltip
-            el={<SiMongodb className='text-[62px] text-herolayer' />}
-            label='Mongo DB'
-          />
-          <Tooltip
-            el={<SiFauna className='text-[62px] text-herolayer' />}
-            label='Fauna DB'
-          />
-          <Tooltip
-            el={<SiJenkins className='text-[62px] text-herolayer' />}
-            label='Jenkins'
-          />
-          <Tooltip
-            el={<SiNginx className='text-[62px] text-herolayer' />}
-            label='Nginx'
-          />
-          <Tooltip
-            el={<SiRedux className='text-[62px] text-herolayer' />}
-            label='Redux'
-          />
-          <Tooltip
-            el={<SiSelenium className='text-[62px] text-herolayer' />}
-            label='Selenium'
-          />
+          {experienced.map((skill) => (
+            <Tooltip
+              el={skill.icon}
+              label={skill.label}
+              tooltipId={skill.tooltipId}
+            />
+          ))}
         </div>
       </div>
 
@@ -206,7 +264,7 @@ export default function Skills(): React.ReactNode {
         In my daily work, I employ a range of tools, including those previously
         mentioned, alongside others. I'm committed to principles like S.O.L.I.D,
         Clean Code, and Clean Architecture, ensuring my code is not just
-        functional, but also maintainable and scalable.
+        functional, but also maintainable and scalable. I use arch, btw.
       </p>
     </div>
   );

@@ -23,6 +23,9 @@ const config: Config = {
         navbar: '#0f1120',
         parsed: '#643eb9',
         divider: '#201a3f',
+        projectbox: '#14142b',
+        proprietarybox: '#c83267',
+        modalbody: '#f2f3f5',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
