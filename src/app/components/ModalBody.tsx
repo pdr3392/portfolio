@@ -1,7 +1,6 @@
 import React from 'react';
 import { BsX } from 'react-icons/bs';
 import { useModal } from '../hooks/useProjectsModal';
-import BoxLabel from './BoxLabel';
 
 export default function ModalBody(): React.ReactElement {
   const { setIsOpen, modalData } = useModal();
@@ -20,12 +19,24 @@ export default function ModalBody(): React.ReactElement {
       </h1>
 
       <p className='font-Raleway text-base text-black mt-2'>
-        {modalData.projectData}
+        {modalData.projectData.split('\n\n').map((paragraph) => (
+          <>
+            {paragraph}
+            <br />
+            <br />
+          </>
+        ))}
       </p>
 
       <div className='w-full h-fit flex flex-row flex-wrap gap-2 mt-auto justify-end'>
-        {modalData.projectLabels.map((label) => (
-          <BoxLabel label={label} key={label} />
+        {modalData.projectLabels.map((label, index) => (
+          <p
+            key={`modal-${label}`}
+            className='font-Raleway text-black opacity-80 text-base'
+          >
+            {label}
+            {index !== modalData.projectLabels.length - 1 && ', '}
+          </p>
         ))}
       </div>
     </div>

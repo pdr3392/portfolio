@@ -32,11 +32,13 @@ export default function Navbar(): React.ReactNode {
     },
     {
       name: 'Career',
-      action: () => {},
-    },
-    {
-      name: 'Contact',
-      action: () => {},
+      action: () => {
+        const section = document.querySelector('#career');
+
+        if (!section) return;
+
+        section.scrollIntoView({ behavior: 'smooth' });
+      },
     },
     {
       name: 'About me',
@@ -48,7 +50,16 @@ export default function Navbar(): React.ReactNode {
         section.scrollIntoView({ behavior: 'smooth' });
       },
     },
+    {
+      name: 'Contact',
+      action: () => {
+        const section = document.querySelector('#contact');
 
+        if (!section) return;
+
+        section.scrollIntoView({ behavior: 'smooth' });
+      },
+    },
     {
       name: 'Rant',
       action: () => {},

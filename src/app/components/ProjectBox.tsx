@@ -33,9 +33,7 @@ export default function ProjectBox({
           setIsOpen(true);
         }}
       >
-        <p className='font-Raleway text-[20px] text-white'>
-          Mario Tiel's Crypto Scraping
-        </p>
+        <p className='font-Raleway text-[20px] text-white'>{projectName}</p>
 
         <div className='flex w-fit h-fix gap-2 align-center self-center'>
           <BsEye className='text-white text-lg cursor-pointer opacity-80' />
@@ -44,7 +42,11 @@ export default function ProjectBox({
           </p>
         </div>
 
-        <div className='flex gap-2 self-end' id='label-area'>
+        <div
+          className='flex gap-2 self-end w-full px-2 overflow-x-scroll overflow-y-hidden'
+          style={{ scrollbarWidth: 'none' }}
+          id='label-area'
+        >
           {labels.map((label) => (
             <BoxLabel label={label} />
           ))}

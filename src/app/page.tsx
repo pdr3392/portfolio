@@ -15,6 +15,8 @@ import AboutMe from './components/AboutMe';
 import Projects from './components/Projects';
 import { useModal } from './hooks/useProjectsModal';
 import ModalBody from './components/ModalBody';
+import Career from './components/Career';
+import Contact from './components/Contact';
 
 export default function Home(): React.ReactElement {
   React.useEffect(() => {
@@ -63,7 +65,15 @@ export default function Home(): React.ReactElement {
 
       <Divider />
 
+      <Career />
+
+      <Divider />
+
       <AboutMe />
+
+      <Divider />
+
+      <Contact />
 
       <Divider />
 
