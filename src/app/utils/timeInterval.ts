@@ -2,8 +2,6 @@
 /* eslint-disable operator-linebreak */
 /* eslint-disable indent */
 /* eslint-disable prettier/prettier */
-/* const monthNumber = (monthYear: string) => new Date(Date.parse(monthYear.replace(/(\w+)\/(\d+)/, '$1 01, $2'))).getMonth() + 1 */;
-
 export function processTimeInterval(interval: string): string {
     const [startStr, endStr] = interval.split(' - ');
 

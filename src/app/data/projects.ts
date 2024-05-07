@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 export const projects = [
   {
     projectName: "Mario Tiel's Crypto Scraping",
