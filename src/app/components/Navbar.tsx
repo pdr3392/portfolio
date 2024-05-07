@@ -3,67 +3,98 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React from 'react';
+import { usePortfolioOrRantState } from '../hooks/usePortfolioOrRant';
 
 export default function Navbar(): React.ReactNode {
+  const { setPortfolioOrRant, portfolioOrRant } = usePortfolioOrRantState();
+
+  const scroll = (id: string): void => {
+    const section = document.querySelector(`#${id}`);
+
+    if (!section) return;
+
+    section.scrollIntoView({ behavior: 'smooth' });
+  };
+
   const navItems = [
     {
       name: 'Home',
-      action: () => {},
+      action: () => {
+        setPortfolioOrRant('portfolio');
+
+        if (portfolioOrRant === 'rant') {
+          setTimeout(() => scroll('page-wrapper'), 400);
+        } else {
+          scroll('page-wrapper');
+        }
+      },
     },
     {
       name: 'Skills',
       action: () => {
-        const section = document.querySelector('#skills');
+        setPortfolioOrRant('portfolio');
 
-        if (!section) return;
-
-        section.scrollIntoView({ behavior: 'smooth' });
+        if (portfolioOrRant === 'rant') {
+          setTimeout(() => scroll('skills'), 400);
+        } else {
+          scroll('skills');
+        }
       },
     },
     {
       name: 'Projects',
       action: () => {
-        const section = document.querySelector('#projects');
+        setPortfolioOrRant('portfolio');
 
-        if (!section) return;
-
-        section.scrollIntoView({ behavior: 'smooth' });
+        if (portfolioOrRant === 'rant') {
+          setTimeout(() => scroll('projects'), 400);
+        } else {
+          scroll('projects');
+        }
       },
     },
     {
       name: 'Career',
       action: () => {
-        const section = document.querySelector('#career');
+        setPortfolioOrRant('portfolio');
 
-        if (!section) return;
-
-        section.scrollIntoView({ behavior: 'smooth' });
+        if (portfolioOrRant === 'rant') {
+          setTimeout(() => scroll('career'), 400);
+        } else {
+          scroll('career');
+        }
       },
     },
     {
       name: 'About me',
       action: () => {
-        const section = document.querySelector('#about-me');
+        setPortfolioOrRant('portfolio');
 
-        if (!section) return;
-
-        section.scrollIntoView({ behavior: 'smooth' });
+        if (portfolioOrRant === 'rant') {
+          setTimeout(() => scroll('about-me'), 400);
+        } else {
+          scroll('about');
+        }
       },
     },
     {
       name: 'Contact',
       action: () => {
-        const section = document.querySelector('#contact');
+        setPortfolioOrRant('portfolio');
 
-        if (!section) return;
-
-        section.scrollIntoView({ behavior: 'smooth' });
+        if (portfolioOrRant === 'rant') {
+          setTimeout(() => scroll('contact'), 400);
+        } else {
+          scroll('contact');
+        }
       },
     },
-    {
-      name: 'Rant',
-      action: () => {},
-    },
+    // {
+    //   name: 'Rant',
+    //   action: () => {
+    //     setPortfolioOrRant('rant');
+    //   },
+    // },
   ];
 
   return (
