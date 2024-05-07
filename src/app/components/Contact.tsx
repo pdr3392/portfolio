@@ -53,7 +53,7 @@ export default function Contact(): React.ReactElement {
 
       <div className='absolute bottom-0 left-0 w-full h-24 bg-[#14142b] flex flex-row items-center px-4'>
         <p className='font-Raleway text-white opacity-80 text-base'>
-          Developed by Pedro Correia, base on design by
+          Developed by Pedro Correia, based on design by
           <Link
             href='https://www.figma.com/community/file/1162385628597290713/my-web-portfolio'
             target='_blank'
