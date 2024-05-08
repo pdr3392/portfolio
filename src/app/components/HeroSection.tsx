@@ -9,6 +9,7 @@ import Hero from './Hero';
 import CVSection from './CVSection';
 import Navbar from './Navbar';
 import { useWindowSize } from '../hooks/usePageWidth';
+import { SiNextdotjs, SiTailwindcss } from 'react-icons/si';
 
 export default function HeroSection(): React.ReactElement {
   const pageWidth = useWindowSize();
