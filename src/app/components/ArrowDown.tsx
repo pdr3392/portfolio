@@ -29,7 +29,7 @@ export default function ArrowDown(): React.ReactNode {
   }, []);
 
   return (
-    <div className='w-full h-full absolute items-end justify-center flex pb-10'>
+    <div className='w-full h-full absolute items-end justify-center flex pb-10 bottom-0'>
       <BsArrowDownCircle
         className={`text-herolayer text-2xl cursor-pointer opacity-50 ${isAtTop ? 'hidden' : ''}`}
       />

@@ -17,6 +17,7 @@ import Career from '../components/Career';
 import AboutMe from '../components/AboutMe';
 import Contact from '../components/Contact';
 import ModalBody from '../components/ModalBody';
+import HeroSection from '../components/HeroSection';
 
 export default function Portfolio(): React.ReactElement {
   React.useEffect(() => {
@@ -40,19 +41,8 @@ export default function Portfolio(): React.ReactElement {
   }, [setIsOpen]);
 
   return (
-    <div className='flex flex-col overflow-x-hidden relative' id='page-wrapper'>
-      <div className='flex h-fit min-h-lvh w-lvw bg-bg relative items-center overflow-y-hidden'>
-        <ArrowDown />
-        <div className='flex flex-row h-full w-full px-20 justify-between'>
-          <NameSection />
-          <Hero />
-          {/* filler */}
-          <div className='flex w-1/2 h-full' />
-          {/* filler */}
-          <CVSection />
-          <Navbar />
-        </div>
-      </div>
+    <div className='flex flex-col relative overflow-hidden' id='page-wrapper'>
+      <HeroSection />
       <Divider />
 
       <div className='flex h-lvh w-lvw bg-bg relative'>

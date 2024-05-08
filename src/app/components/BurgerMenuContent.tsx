@@ -5,7 +5,7 @@
 // eslint-disable-next-line object-curly-newline
 import React, { useEffect, useState, useRef, useCallback } from 'react';
 import Link from 'next/link';
-import { BsGithub, BsLinkedin } from 'react-icons/bs';
+import { BsGithub, BsLinkedin, BsX } from 'react-icons/bs';
 import { useBurgerMenuState } from '../hooks/useBurgerMenu';
 import { usePortfolioOrRantState } from '../hooks/usePortfolioOrRant';
 import Outlined from './Outlined';
@@ -145,10 +145,17 @@ export default function BurgerMenuContent(): React.ReactElement {
     <div
       ref={burgerMenuRef}
       id='burger-menu'
-      className={`min-h-lvh max-h-lvh fixed top-0 left-0 w-80 bg-navbar flex flex-col z-[999] transition-opacity duration-500 px-8 py-11 gap-6 ${
+      className={`min-h-lvh max-h-lvh fixed top-0 left-0 w-80 bg-navbar flex flex-col z-[999] transition-opacity duration-500 px-8 py-20 gap-6 ${
         visible ? 'opacity-100' : 'opacity-0'
       }`}
     >
+      <div className='absolute top-6 right-6 h-fit w-fit'>
+        <BsX
+          className='text-white text-2xl cursor-pointer'
+          onClick={() => setIsBurgerMenuOpened(false)}
+        />
+      </div>
+
       {navItems.map((navItem) => (
         <Outlined
           onClick={navItem.action}

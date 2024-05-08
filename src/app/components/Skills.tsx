@@ -229,43 +229,46 @@ export default function Skills(): React.ReactNode {
   ];
 
   return (
-    <div className='w-full min-h-lvh h-fit flex flex-col relative' id='skills'>
-      <div className='w-full h-fit flex items-center justify-center font-extrabold mt-[140px] flex-col gap-4'>
-        <p className='font-Raleway text-white text-[48px]'>Tools & Skills</p>
+    <div className='flex min-h-lvh w-lvw bg-bg relative h-fit' id='skills'>
+      <div className='w-full min-h-lvh h-fit flex flex-col relative'>
+        <div className='w-full h-fit flex items-center justify-center font-extrabold mt-[140px] flex-col gap-4'>
+          <p className='font-Raleway text-white text-[48px]'>Tools & Skills</p>
 
-        <p className='font-Raleway text-white opacity-80 text-2xl mt-[60px]'>
-          Tools I'm using on a daily basis
-        </p>
+          <p className='font-Raleway text-white opacity-80 text-2xl mt-[60px]'>
+            Tools I'm using on a daily basis
+          </p>
 
-        <div className='flex flex-row w-full h-fit items-center justify-center gap-4 flex-wrap'>
-          {daily.map((skill) => (
-            <Tooltip
-              el={skill.icon}
-              label={skill.label}
-              tooltipId={skill.tooltipId}
-            />
-          ))}
+          <div className='flex flex-row w-full h-fit items-center justify-center gap-4 flex-wrap'>
+            {daily.map((skill) => (
+              <Tooltip
+                el={skill.icon}
+                label={skill.label}
+                tooltipId={skill.tooltipId}
+              />
+            ))}
+          </div>
+          <p className='font-Raleway text-white opacity-80 text-2xl mt-[60px]'>
+            Tools I'm experienced with
+          </p>
+          <div className='flex flex-row w-full h-fit items-center justify-center gap-4 flex-wrap'>
+            {experienced.map((skill) => (
+              <Tooltip
+                el={skill.icon}
+                label={skill.label}
+                tooltipId={skill.tooltipId}
+              />
+            ))}
+          </div>
         </div>
-        <p className='font-Raleway text-white opacity-80 text-2xl mt-[60px]'>
-          Tools I'm experienced with
+
+        <p className='font-Raleway text-white opacity-80 text-sm max-w-[600px] mt-14 self-center'>
+          In my daily work, I employ a range of tools, including those
+          previously mentioned, alongside others. I'm committed to principles
+          like S.O.L.I.D, Clean Code, and Clean Architecture, ensuring my code
+          is not just functional, but also maintainable and scalable. I use
+          arch, btw.
         </p>
-        <div className='flex flex-row w-full h-fit items-center justify-center gap-4 flex-wrap'>
-          {experienced.map((skill) => (
-            <Tooltip
-              el={skill.icon}
-              label={skill.label}
-              tooltipId={skill.tooltipId}
-            />
-          ))}
-        </div>
       </div>
-
-      <p className='font-Raleway text-white opacity-80 text-sm max-w-[600px] mt-14 self-center'>
-        In my daily work, I employ a range of tools, including those previously
-        mentioned, alongside others. I'm committed to principles like S.O.L.I.D,
-        Clean Code, and Clean Architecture, ensuring my code is not just
-        functional, but also maintainable and scalable. I use arch, btw.
-      </p>
     </div>
   );
 }
