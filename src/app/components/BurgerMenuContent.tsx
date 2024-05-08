@@ -4,11 +4,11 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 // eslint-disable-next-line object-curly-newline
 import React, { useEffect, useState, useRef, useCallback } from 'react';
+import Link from 'next/link';
+import { BsGithub, BsLinkedin } from 'react-icons/bs';
 import { useBurgerMenuState } from '../hooks/useBurgerMenu';
 import { usePortfolioOrRantState } from '../hooks/usePortfolioOrRant';
 import Outlined from './Outlined';
-import Link from 'next/link';
-import { BsGithub, BsLinkedin } from 'react-icons/bs';
 
 export default function BurgerMenuContent(): React.ReactElement {
   const [visible, setVisible] = useState(false);
