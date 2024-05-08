@@ -1,12 +1,19 @@
 'use client';
 
+/* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React from 'react';
+import { RxHamburgerMenu } from 'react-icons/rx';
 import { usePortfolioOrRantState } from '../hooks/usePortfolioOrRant';
+import { useWindowSize } from '../hooks/usePageWidth';
+import BurgerMenuContent from './BurgerMenuContent';
+import { useBurgerMenuState } from '../hooks/useBurgerMenu';
 
 export default function Navbar(): React.ReactNode {
+  const { isBurgerMenuOpened, setIsBurgerMenuOpened } = useBurgerMenuState();
   const { setPortfolioOrRant, portfolioOrRant } = usePortfolioOrRantState();
+  const pageWidth = useWindowSize();
 
   const scroll = (id: string): void => {
     const section = document.querySelector(`#${id}`);
@@ -73,7 +80,7 @@ export default function Navbar(): React.ReactNode {
         if (portfolioOrRant === 'rant') {
           setTimeout(() => scroll('about-me'), 400);
         } else {
-          scroll('about');
+          scroll('about-me');
         }
       },
     },
@@ -97,8 +104,24 @@ export default function Navbar(): React.ReactNode {
     // },
   ];
 
+  if (pageWidth < 981) {
+    return (
+      <>
+        <button
+          onClick={() => setIsBurgerMenuOpened(true)}
+          className='w-fit absolute top-9 left-16 rounded-2xl bg-navbar h-14 flex flex-row items-center px-6 gap-4 justify-end z-50 hover:text-parsed hover:opacity-100 text-white'
+          type='button'
+        >
+          <RxHamburgerMenu className='opacity-80' />
+        </button>
+
+        {isBurgerMenuOpened && <BurgerMenuContent />}
+      </>
+    );
+  }
+
   return (
-    <div className='w-fit absolute top-9 right-40 rounded-2xl bg-navbar h-16 flex flex-row items-center px-10 gap-4 justify-end z-50'>
+    <div className='w-fit absolute top-9 left-12 rounded-2xl bg-navbar h-16 flex flex-row items-center px-10 gap-4 justify-end z-50'>
       {navItems.map((item) => (
         <p
           className='font-Raleway text-white opacity-80 hover:text-parsed hover:opacity-100 cursor-pointer'

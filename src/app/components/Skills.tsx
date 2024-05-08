@@ -229,7 +229,7 @@ export default function Skills(): React.ReactNode {
   ];
 
   return (
-    <div className='w-full h-fit flex flex-col relative' id='skills'>
+    <div className='w-full min-h-lvh h-fit flex flex-col relative' id='skills'>
       <div className='w-full h-fit flex items-center justify-center font-extrabold mt-[140px] flex-col gap-4'>
         <p className='font-Raleway text-white text-[48px]'>Tools & Skills</p>
 

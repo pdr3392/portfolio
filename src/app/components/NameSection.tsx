@@ -1,6 +1,8 @@
+/* eslint-disable react/jsx-wrap-multilines */
 import { BsLinkedin, BsGithub } from 'react-icons/bs';
 import React from 'react';
 import Link from 'next/link';
+import Outlined from './Outlined';
 
 export default function NameSection(): React.ReactNode {
   return (
@@ -12,12 +14,25 @@ export default function NameSection(): React.ReactNode {
         Fullstack Developer
       </p>
       <div className='flex flex-row gap-4 items-center'>
-        <Link href='https://www.linkedin.com/in/phrcorreia/' target='_blank'>
-          <BsLinkedin className='text-white text-2xl mt-4 cursor-pointer opacity-50' />
-        </Link>
-        <Link href='https://github.com/pdr3392' target='_blank'>
-          <BsGithub className='text-white text-2xl mt-4 cursor-pointer opacity-50' />
-        </Link>
+        <Outlined
+          onClick={() => {}}
+          element={
+            <Link
+              href='https://www.linkedin.com/in/phrcorreia/'
+              target='_blank'
+            >
+              <BsLinkedin className='text-white text-2xl mt-4 cursor-pointer opacity-50' />
+            </Link>
+          }
+        />
+        <Outlined
+          onClick={() => {}}
+          element={
+            <Link href='https://github.com/pdr3392' target='_blank'>
+              <BsGithub className='text-white text-2xl mt-4 cursor-pointer opacity-50' />
+            </Link>
+          }
+        />
       </div>
     </div>
   );
