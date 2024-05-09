@@ -41,9 +41,7 @@ export default function Portfolio(): React.ReactElement {
 
       <Divider />
 
-      <div className='flex h-lvh w-lvw bg-bg relative'>
-        <Skills />
-      </div>
+      <Skills />
 
       <Divider />
 

@@ -229,9 +229,12 @@ export default function Skills(): React.ReactNode {
   ];
 
   return (
-    <div className='flex min-h-lvh w-lvw bg-bg relative h-fit' id='skills'>
+    <div
+      className='flex min-h-lvh w-lvw bg-bg relative h-fit pb-10'
+      id='skills'
+    >
       <div className='w-full min-h-lvh h-fit flex flex-col relative'>
-        <div className='w-full h-fit flex items-center justify-center font-extrabold mt-[140px] flex-col gap-4'>
+        <div className='w-full h-fit flex items-center justify-center font-extrabold mt-[140px] flex-col gap-4 px-20'>
           <p className='font-Raleway text-white text-[48px]'>Tools & Skills</p>
 
           <p className='font-Raleway text-white opacity-80 text-2xl mt-[60px]'>
@@ -261,7 +264,7 @@ export default function Skills(): React.ReactNode {
           </div>
         </div>
 
-        <p className='font-Raleway text-white opacity-80 text-sm max-w-[600px] mt-14 self-center'>
+        <p className='font-Raleway text-white opacity-80 text-sm max-w-[600px] mt-14 self-center px-20'>
           In my daily work, I employ a range of tools, including those
           previously mentioned, alongside others. I'm committed to principles
           like S.O.L.I.D, Clean Code, and Clean Architecture, ensuring my code

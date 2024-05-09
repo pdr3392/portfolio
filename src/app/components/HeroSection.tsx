@@ -17,7 +17,10 @@ export default function HeroSection(): React.ReactElement {
 
   if (pageWidth < 393) {
     return (
-      <div className='flex h-fit min-h-lvh w-lvw bg-bg relative items-center overflow-y-hidden flex-col justify-end py-32 overflow-hidden'>
+      <div
+        className='flex h-fit min-h-lvh w-lvw bg-bg relative items-center overflow-y-hidden flex-col justify-end py-32 overflow-hidden'
+        id='hero'
+      >
         <ArrowDown />
         <Navbar />
         <div className='flex flex-col h-full w-full items-start justify-start px-10 gap-8'>

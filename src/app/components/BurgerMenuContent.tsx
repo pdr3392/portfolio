@@ -18,13 +18,18 @@ export default function BurgerMenuContent(): React.ReactElement {
   const { setPortfolioOrRant, portfolioOrRant } = usePortfolioOrRantState();
 
   const scroll = (id: string): void => {
+    setIsBurgerMenuOpened(false);
     const section = document.querySelector(`#${id}`);
 
     if (!section) return;
 
-    section.scrollIntoView({ behavior: 'smooth' });
-  };
+    const headerHeight = document.querySelector('#hero')?.clientHeight;
+    const offset = headerHeight
+      ? section.getBoundingClientRect().top - headerHeight
+      : section.getBoundingClientRect().top;
 
+    window.scrollBy({ top: offset, behavior: 'smooth' });
+  };
   const handleClickOutside = useCallback(
     (event: MouseEvent): void => {
       if (
@@ -59,7 +64,6 @@ export default function BurgerMenuContent(): React.ReactElement {
     {
       name: 'Home',
       action: () => {
-        handleClickOutside({} as any);
         setPortfolioOrRant('portfolio');
 
         if (portfolioOrRant === 'rant') {
@@ -72,7 +76,6 @@ export default function BurgerMenuContent(): React.ReactElement {
     {
       name: 'Skills',
       action: () => {
-        handleClickOutside({} as any);
         setPortfolioOrRant('portfolio');
 
         if (portfolioOrRant === 'rant') {
@@ -85,7 +88,6 @@ export default function BurgerMenuContent(): React.ReactElement {
     {
       name: 'Projects',
       action: () => {
-        handleClickOutside({} as any);
         setPortfolioOrRant('portfolio');
 
         if (portfolioOrRant === 'rant') {
@@ -98,7 +100,6 @@ export default function BurgerMenuContent(): React.ReactElement {
     {
       name: 'Career',
       action: () => {
-        handleClickOutside({} as any);
         setPortfolioOrRant('portfolio');
 
         if (portfolioOrRant === 'rant') {
@@ -111,7 +112,6 @@ export default function BurgerMenuContent(): React.ReactElement {
     {
       name: 'About me',
       action: () => {
-        handleClickOutside({} as any);
         setPortfolioOrRant('portfolio');
 
         if (portfolioOrRant === 'rant') {
@@ -124,7 +124,6 @@ export default function BurgerMenuContent(): React.ReactElement {
     {
       name: 'Contact',
       action: () => {
-        handleClickOutside({} as any);
         setPortfolioOrRant('portfolio');
 
         if (portfolioOrRant === 'rant') {
@@ -136,7 +135,7 @@ export default function BurgerMenuContent(): React.ReactElement {
     },
     // {
     //   name: 'Rant',
-    //   action: () => {handleClickOutside()
+    //   action: () => {
     //     setPortfolioOrRant('rant');
     //   },
     // },
