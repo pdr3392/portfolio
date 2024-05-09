@@ -1,6 +1,8 @@
+/* eslint-disable operator-linebreak */
 import React from 'react';
 import { education, professional } from '../data/career';
 import { processTimeInterval } from '../utils/timeInterval';
+import { useWindowSize } from '../hooks/usePageWidth';
 
 function CareerBox({
   company,
@@ -22,11 +24,11 @@ function CareerBox({
       </p>
 
       <div className='flex flex-row h-fit w-full justify-between mt-auto'>
-        <p className='text-herolayer font-Raleway text-base font-bold'>
+        <p className='text-herolayer font-Raleway text-base font-bold max-w-24'>
           {intervalResult}
         </p>
 
-        <p className='text-herolayer font-Raleway text-base font-bold'>
+        <p className='text-herolayer font-Raleway text-base font-bold max-w-24'>
           {interval}
         </p>
       </div>
@@ -35,11 +37,107 @@ function CareerBox({
 }
 
 export default function Career(): React.ReactElement {
+  const pageWidth = useWindowSize();
+
+  const rowCount = Math.max([education.length, professional.length].sort()[0]);
+
+  const rows = Array.from({ length: rowCount + 1 }, (_, i) => i).map(
+    (index) => {
+      const professionalExperience =
+        professional.length - 1 >= index
+          ? professional[index]
+          : { company: '', description: '', interval: '' };
+      const educationExperience =
+        education.length - 1 >= index
+          ? education[index]
+          : { company: '', description: '', interval: '' };
+
+      return (
+        <div className='w-full h-fit flex gap-4' key={index}>
+          {professionalExperience.company === '' ? (
+            <div className='w-full h-full' />
+          ) : (
+            <CareerBox
+              company={professionalExperience.company}
+              description={professionalExperience.description}
+              interval={professionalExperience.interval}
+            />
+          )}
+
+          {educationExperience.company === '' ? (
+            <div className='w-full h-full' />
+          ) : (
+            <CareerBox
+              company={educationExperience.company}
+              description={educationExperience.description}
+              interval={educationExperience.interval}
+            />
+          )}
+        </div>
+      );
+      // eslint-disable-next-line comma-dangle
+    }
+  );
+
+  if (pageWidth < 771) {
+    return (
+      <div
+        className='min-h-lvh h-fit w-full flex bg-bg p-6 flex-col gap-4'
+        id='career'
+      >
+        <div className='w-full h-fit flex flex-col gap-4'>
+          <div className='w-full h-fit flex flex-col'>
+            <p className='font-Raleway text-white text-3xl self-center whitespace-nowrap'>
+              Professional Experience
+            </p>
+
+            <p className='font-Raleway text-white text-[1.5rem] opacity-50 self-center'>
+              2018 - Present
+            </p>
+          </div>
+
+          {professional.map((experience) => (
+            <CareerBox
+              company={experience.company}
+              description={experience.description}
+              interval={experience.interval}
+              key={experience.company}
+            />
+          ))}
+        </div>
+
+        <div className='w-full h-fit flex flex-col gap-4 mt-6'>
+          <div className='w-full h-fit flex flex-col'>
+            <p className='font-Raleway text-white text-3xl self-center'>
+              Education
+            </p>
+
+            <p className='font-Raleway text-white text-[1.5rem] opacity-50 self-center'>
+              2014 - Present
+            </p>
+          </div>
+
+          {education.map((experience) => (
+            <CareerBox
+              company={experience.company}
+              description={experience.description}
+              interval={experience.interval}
+              key={experience.company}
+            />
+          ))}
+        </div>
+      </div>
+    );
+  }
+
   return (
-    <div className='min-h-lvh h-fit w-full flex gap-2 bg-bg p-36' id='career'>
-      <div className='w-1/2 h-full flex flex-col p-2'>
+    <div
+      className='min-h-lvh h-fit w-full flex bg-bg p-36 flex-col gap-4'
+      id='career'
+    >
+      <div className='w-full h-fit flex justify-between gap-4'>
         <div className='w-full h-fit flex flex-col'>
-          <p className='font-Raleway text-white text-3xl self-center'>
+          <p className='font-Raleway text-white text-3xl self-center whitespace-nowrap'>
             Professional Experience
           </p>
 
@@ -48,18 +146,6 @@ export default function Career(): React.ReactElement {
           </p>
         </div>
 
-        <div className='h-fit w-full flex flex-col mt-16 px-[7.5rem] gap-16'>
-          {professional.map((job) => (
-            <CareerBox
-              company={job.company}
-              description={job.description}
-              interval={job.interval}
-            />
-          ))}
-        </div>
-      </div>
-
-      <div className='w-1/2 h-full flex flex-col p-2'>
         <div className='w-full h-fit flex flex-col'>
           <p className='font-Raleway text-white text-3xl self-center'>
             Education
@@ -69,17 +155,9 @@ export default function Career(): React.ReactElement {
             2014 - Present
           </p>
         </div>
-
-        <div className='h-fit w-full flex flex-col mt-16 px-[7.5rem] gap-16'>
-          {education.map((edu) => (
-            <CareerBox
-              company={edu.company}
-              description={edu.position}
-              interval={edu.interval}
-            />
-          ))}
-        </div>
       </div>
+
+      {rows.map((row) => row)}
     </div>
   );
 }

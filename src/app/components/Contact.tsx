@@ -57,6 +57,7 @@ export default function Contact(): React.ReactElement {
           <Link
             href='https://www.figma.com/community/file/1162385628597290713/my-web-portfolio'
             target='_blank'
+            className='text-herolayer'
           >
             {' '}
             Henrique Sousa

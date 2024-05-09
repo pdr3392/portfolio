@@ -3,7 +3,10 @@ import React from 'react';
 
 export default function AboutMe(): React.ReactElement {
   return (
-    <div className='h-lvh w-full flex flex-col bg-bg p-36 gap-2' id='about-me'>
+    <div
+      className='min-h-lvh h-fit w-full flex flex-col bg-bg p-36 gap-2'
+      id='about-me'
+    >
       <h1 className='font-Raleway text-white text-5xl font-extrabold self-center'>
         About me
       </h1>
