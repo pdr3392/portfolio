@@ -17,10 +17,16 @@ const DynamicRant = dynamic(() => import('./layouts/Rant'), {
   ssr: false,
 });
 
-export default function Home(): React.ReactElement {
-  const [pageWidth, setpageWidth] = React.useState(
-    window ? window.innerWidth : 0
+function Loading(): React.ReactElement {
+  return (
+    <div className='min-h-[100vh] min-w-[100vw] max-h-[100vh] max-w-[100vw] bg-bg flex absolute top-0 left-0 items-center justify-center'>
+      <Spinner />
+    </div>
   );
+}
+
+export default function Home(): React.ReactElement {
+  const [pageWidth, setpageWidth] = React.useState(0);
   const { portfolioOrRant } = usePortfolioOrRantState();
 
   // eslint-disable-next-line consistent-return
@@ -37,19 +43,15 @@ export default function Home(): React.ReactElement {
 
       window.addEventListener('resize', handleResize);
 
+      setpageWidth(window.innerWidth);
+
       return () => {
         window.removeEventListener('resize', handleResize);
       };
     }
   }, []);
 
-  if (!pageWidth || pageWidth < 1) {
-    return (
-      <div className='min-h-[100vh] min-w-[100vw] max-h-[100vh] max-w-[100vw] bg-bg flex absolute top-0 left-0 items-center justify-center'>
-        <Spinner />
-      </div>
-    );
-  }
+  if (!pageWidth || pageWidth < 1) return <Loading />;
 
   if (portfolioOrRant === 'portfolio') {
     return <DynamicPortfolio />;
