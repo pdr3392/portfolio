@@ -26,12 +26,12 @@ export default function Hero(): React.ReactNode {
     };
   }, []);
 
-  function calculateSize(): string {
+  function calculateSize(): number {
     const viewportWidth = window.innerWidth;
     const baseWidth = 1440;
     const baseSize = 750;
     const size = baseSize * (viewportWidth / baseWidth);
-    return `${Math.min(size, baseSize)}px`;
+    return Math.min(size, baseSize);
   }
 
   const [size, setSize] = useState(calculateSize());
@@ -53,8 +53,8 @@ export default function Hero(): React.ReactNode {
 
     switch (true) {
       case pageWidth < 345:
-        width = size + 30;
-        height = size + 30;
+        width = size + 100;
+        height = size + 100;
         left = 50;
         top = 30;
         break;
@@ -68,7 +68,7 @@ export default function Hero(): React.ReactNode {
         width = size + 150;
         height = size + 150;
         left = 50;
-        top = 30;
+        top = 50;
         break;
       case pageWidth < 981:
         width = size;
@@ -85,6 +85,15 @@ export default function Hero(): React.ReactNode {
     }
 
     const glowSize = imageWidth ? imageWidth + 40 : 0;
+
+    console.log({
+      width,
+      height,
+      top,
+      left,
+      glowSize,
+    });
+
     return {
       width,
       height,
@@ -100,7 +109,7 @@ export default function Hero(): React.ReactNode {
       style={{ width: pageProps.width, height: pageProps.height }}
     >
       <div
-        className={`top-[${pageProps.top}%] left-[${pageProps.left}%] transform -translate-x-[${pageProps.left}%] -translate-y-[${pageProps.top}%] rounded-full relative items-center justify-center flex`}
+        className={`top-[${pageProps.top}%] left-[${pageProps.left}%] transform -translate-x-[${pageProps.left}%] -translate-y-[50%] rounded-full relative items-center justify-center flex`}
       >
         <div
           className='bg-glow rounded-full absolute blur shadow-inner-glow z-50 opacity-50'
