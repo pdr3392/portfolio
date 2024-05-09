@@ -63,21 +63,7 @@ export default function Portfolio(): React.ReactElement {
 
       {/* Project's Modal */}
 
-      {isOpen && (
-        <div
-          className='w-full h-full absolute flex flex-col top-0 left-0'
-          style={{ zIndex: '800' }}
-          onClick={() => setIsOpen(false)}
-        >
-          <div className='w-full h-full flex bg-black opacity-30' />
-          <div
-            className='w-1/2 bg-modalbody flex flex-col fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-lg p-8'
-            style={{ zIndex: '999', height: 'calc(100% - 64px)' }}
-          >
-            <ModalBody />
-          </div>
-        </div>
-      )}
+      {isOpen && <ModalBody />}
     </div>
   );
 }
