@@ -5,11 +5,6 @@
 import * as React from 'react';
 import { initFlowbite } from 'flowbite';
 import { useModal } from '../hooks/useProjectsModal';
-import ArrowDown from '../components/ArrowDown';
-import NameSection from '../components/NameSection';
-import Hero from '../components/Hero';
-import CVSection from '../components/CVSection';
-import Navbar from '../components/Navbar';
 import Divider from '../components/Divider';
 import Skills from '../components/Skills';
 import Projects from '../components/Projects';
@@ -43,6 +38,7 @@ export default function Portfolio(): React.ReactElement {
   return (
     <div className='flex flex-col relative overflow-hidden' id='page-wrapper'>
       <HeroSection />
+
       <Divider />
 
       <div className='flex h-lvh w-lvw bg-bg relative'>

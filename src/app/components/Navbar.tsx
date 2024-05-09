@@ -104,6 +104,22 @@ export default function Navbar(): React.ReactNode {
     // },
   ];
 
+  if (pageWidth < 393) {
+    return (
+      <>
+        <button
+          onClick={() => setIsBurgerMenuOpened(true)}
+          className='w-fit absolute top-9 left-8 rounded-2xl bg-navbar h-14 flex flex-row items-center px-6 gap-4 justify-end z-50 hover:text-parsed hover:opacity-100 text-white'
+          type='button'
+        >
+          <RxHamburgerMenu className='opacity-80' />
+        </button>
+
+        {isBurgerMenuOpened && <BurgerMenuContent />}
+      </>
+    );
+  }
+
   if (pageWidth < 981) {
     return (
       <>
