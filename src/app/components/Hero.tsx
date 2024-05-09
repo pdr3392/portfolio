@@ -55,44 +55,26 @@ export default function Hero(): React.ReactNode {
       case pageWidth < 345:
         width = size + 100;
         height = size + 100;
-        left = 50;
-        top = 30;
         break;
       case pageWidth < 380:
         width = size + 50;
         height = size + 50;
-        left = 50;
-        top = 30;
         break;
       case pageWidth < 700:
         width = size + 150;
         height = size + 150;
-        left = 50;
-        top = 50;
         break;
       case pageWidth < 981:
         width = size;
         height = size;
-        left = 50;
-        top = 50;
         break;
       default:
         width = size;
         height = size;
-        left = 50;
-        top = 50;
         break;
     }
 
     const glowSize = imageWidth ? imageWidth + 40 : 0;
-
-    console.log({
-      width,
-      height,
-      top,
-      left,
-      glowSize,
-    });
 
     return {
       width,
@@ -109,7 +91,7 @@ export default function Hero(): React.ReactNode {
       style={{ width: pageProps.width, height: pageProps.height }}
     >
       <div
-        className={`top-[${pageProps.top}%] left-[${pageProps.left}%] transform -translate-x-[${pageProps.left}%] -translate-y-[50%] rounded-full relative items-center justify-center flex`}
+        className={`top-[50%] left-[${pageProps.left}%] transform -translate-x-[${pageProps.left}%] -translate-y-[50%] rounded-full relative items-center justify-center flex`}
       >
         <div
           className='bg-glow rounded-full absolute blur shadow-inner-glow z-50 opacity-50'
