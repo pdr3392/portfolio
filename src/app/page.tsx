@@ -18,7 +18,9 @@ const DynamicRant = dynamic(() => import('./layouts/Rant'), {
 });
 
 export default function Home(): React.ReactElement {
-  const [pageWidth, setpageWidth] = React.useState(0);
+  const [pageWidth, setpageWidth] = React.useState(
+    window ? window.innerWidth : 0
+  );
   const { portfolioOrRant } = usePortfolioOrRantState();
 
   // eslint-disable-next-line consistent-return
@@ -43,7 +45,7 @@ export default function Home(): React.ReactElement {
 
   if (!pageWidth || pageWidth < 1) {
     return (
-      <div className='min-h-lvh min-w-lvw max-h-lvh max-w-lvw bg-bg flex absolute top-0 left-0 items-center justify-center'>
+      <div className='min-h-[100vh] min-w-[100vw] max-h-[100vh] max-w-[100vw] bg-bg flex absolute top-0 left-0 items-center justify-center'>
         <Spinner />
       </div>
     );
