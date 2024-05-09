@@ -1,3 +1,5 @@
+'use client';
+
 /* eslint-disable max-len */
 // eslint-disable-next-line object-curly-newline
 import React, { useEffect, useMemo, useState, useRef } from 'react';

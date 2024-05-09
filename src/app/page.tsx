@@ -7,7 +7,6 @@
 import * as React from 'react';
 import dynamic from 'next/dynamic';
 import { usePortfolioOrRantState } from './hooks/usePortfolioOrRant';
-import { useWindowSize } from './hooks/usePageWidth';
 import Spinner from './components/Spinner';
 
 const DynamicPortfolio = dynamic(() => import('./layouts/Portfolio'), {
@@ -19,15 +18,27 @@ const DynamicRant = dynamic(() => import('./layouts/Rant'), {
 });
 
 export default function Home(): React.ReactElement {
-  const pageWidth = useWindowSize();
-
+  const [pageWidth, setpageWidth] = React.useState(0);
   const { portfolioOrRant } = usePortfolioOrRantState();
 
+  // eslint-disable-next-line consistent-return
   React.useEffect(() => {
     console.log('Developed by Pedro Correia using Nextjs and Tailwindcss');
     console.log(
       'In case you ever need to contact me, feel free to reach out at phrcorreia3392@gmail.com'
     );
+
+    if (window) {
+      const handleResize = (): void => {
+        setpageWidth(window.innerWidth);
+      };
+
+      window.addEventListener('resize', handleResize);
+
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }
   }, []);
 
   if (!pageWidth || pageWidth < 1) {

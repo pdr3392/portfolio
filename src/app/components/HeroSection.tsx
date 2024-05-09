@@ -1,3 +1,5 @@
+'use client';
+
 /* eslint-disable max-len */
 import React from 'react';
 import { RiDownloadLine } from 'react-icons/ri';
