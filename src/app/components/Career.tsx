@@ -1,3 +1,5 @@
+/* eslint-disable indent */
+/* eslint-disable prettier/prettier */
 /* eslint-disable operator-linebreak */
 import React from 'react';
 import { education, professional } from '../data/career';
@@ -46,16 +48,26 @@ export default function Career(): React.ReactElement {
       const professionalExperience =
         professional.length - 1 >= index
           ? professional[index]
-          : { company: '', description: '', interval: '' };
+          : {
+              company: '',
+              description: '',
+              interval: '',
+              position: '',
+            };
       const educationExperience =
         education.length - 1 >= index
           ? education[index]
-          : { company: '', description: '', interval: '' };
+          : {
+              company: '',
+              description: '',
+              interval: '',
+              position: '',
+            };
 
       return (
         <div className='w-full h-fit flex gap-4' key={index}>
           {professionalExperience.company === '' ? (
-            <div className='w-full h-full' />
+            <div className='w-full h-fit min-h-[13rem] rounded-lg p-6 flex flex-col gap-2' />
           ) : (
             <CareerBox
               company={professionalExperience.company}
@@ -65,11 +77,11 @@ export default function Career(): React.ReactElement {
           )}
 
           {educationExperience.company === '' ? (
-            <div className='w-full h-full' />
+            <div className='w-full h-fit min-h-[13rem] rounded-lg p-6 flex flex-col gap-2' />
           ) : (
             <CareerBox
               company={educationExperience.company}
-              description={educationExperience.description}
+              description={educationExperience.position}
               interval={educationExperience.interval}
             />
           )}
@@ -87,7 +99,7 @@ export default function Career(): React.ReactElement {
       >
         <div className='w-full h-fit flex flex-col gap-4'>
           <div className='w-full h-fit flex flex-col'>
-            <p className='font-Raleway text-white text-3xl self-center whitespace-nowrap'>
+            <p className='font-Raleway text-white text-3xl self-center text-center'>
               Professional Experience
             </p>
 
