@@ -21,6 +21,7 @@ import {
   SiLinux,
   SiMongodb,
   SiMysql,
+  SiNestjs,
   SiNextdotjs,
   SiNginx,
   SiNodedotjs,
@@ -220,6 +221,11 @@ export default function Skills(): React.ReactNode {
       icon: <SiRedux className='text-[62px] text-herolayer' />,
       label: 'Redux',
       tooltipId: 'redux',
+    },
+    {
+      icon: <SiNestjs className='text-[62px] text-herolayer' />,
+      label: 'Nest.js',
+      tooltipId: 'nestjs',
     },
     {
       icon: <SiSelenium className='text-[62px] text-herolayer' />,
